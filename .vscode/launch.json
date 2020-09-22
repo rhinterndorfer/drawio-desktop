@@ -15,6 +15,20 @@
             },
             "program": "${workspaceRoot}/drawio/src/main/webapp/electron.js",
             "protocol": "inspector",
-        }
+        },
+        {
+            "name": "Debug Renderer Process",
+            "type": "chrome",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "windows": {
+              "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+            },
+            "runtimeArgs": [
+              "${workspaceRoot}/drawio/src/main/webapp/electron.js",
+              "--remote-debugging-port=9222"
+            ],
+            "webRoot": "${workspaceRoot}"
+          }
     ]
 }
